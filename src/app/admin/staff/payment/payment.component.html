@@ -1,0 +1,51 @@
+
+  <!-- <main class="container"> -->
+    <!-- <div class="main"> -->
+
+
+      <!-- Payment Method Section  -->
+      <!-- <section class="payment_method"> -->
+        <h2 class="ship_head text-center text-success">Payment Method</h2>
+        <div class="card_info">
+          <div class="card_head">
+            <h2 class="card_title">Debit or Credit Card</h2>
+          </div>
+          <div class="card_types">
+            <img class="card_img" src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="" />
+            <img class="card_img" src="https://cdn-icons-png.flaticon.com/512/349/349230.png" alt="" />
+            <img class="card_img" src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt="" />
+            <img class="card_img" src="https://img.icons8.com/fluency/512/mastercard.png" alt="" />
+          </div>
+          <form [formGroup]="paymentForm" >
+            <input type="text" name="Name" value="" formControlName="name" placeholder="Card Holder" maxlength="60" />
+            <span class="validation_msg" *ngIf="f.name.errors && f.name.errors.required && isError">Please Enter Name.</span>
+            <input type="text" name="Number" value="" formControlName="number" placeholder="Card Number" maxlength="16" />
+            <span class="validation_msg" *ngIf="f.number.errors && f.number.errors.required && isError">Please Enter Card Number.</span>
+            <div>
+              <input type="text" name="Name" value="" formControlName="expire" placeholder="Expire" maxlength="4" />
+              <span class="validation_msg" *ngIf="f.expire.errors && f.expire.errors.required && isError">Please Enter Expiry Date.</span>
+              <input type="text" name="Name" value="" formControlName="cvc" placeholder="CVC" maxlength="3" />
+              <span class="validation_msg" *ngIf="f.cvc.errors && f.cvc.errors.required && isError">Please Enter Card Cvc.</span>
+            </div>
+            <button type="submit" class="confirm_btn" (click)="Data()">Pay</button>
+          </form>
+          
+        </div>
+        <!-- <div class="e_payment">
+          <div class="pay">
+            <img src="https://cdn-icons-png.flaticon.com/512/6124/6124998.png" alt="" />
+          </div>
+          <div class="pay">
+            <img src="https://cdn-icons-png.flaticon.com/512/5977/5977576.png" alt="" />
+          </div>
+          <div class="pay">
+            <img src="https://cdn-icons-png.flaticon.com/512/196/196565.png" alt="" />
+          </div>
+        </div> -->
+       
+      <!-- </section> -->
+   
+   
+    <!-- </div> -->
+  <!-- </main> -->
+

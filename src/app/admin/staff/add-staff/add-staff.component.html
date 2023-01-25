@@ -1,0 +1,72 @@
+<div class="container mt-4">
+    <h1 class="display-4 text-center">
+            <i class="fas fa-book-open text-primary"></i>
+<span class="text-primary">Book An </span>Event
+    </h1>
+
+    <form id="book-form" [formGroup]="meraForm" (ngSubmit)="onSubmit()">
+      <label for="author">Event type</label><br>
+      <select class="form-control" id="exampleFormControlSelect1" formControlName="eventtype">
+        <option>Marriage</option>
+        <option>Birthday</option>
+        <option>Party</option>
+        
+        </select><span class="validation_msg" *ngIf="f.eventtype.errors && f.eventtype.errors.required && isError">Please Enter Event type.</span>
+          
+  <br><br>
+        <div class="form-group"  >
+            <label for="author">Event Date</label>
+            <input type="date" class="form-control" id="author" formControlName="date" name="author" />
+            <span class="validation_msg" *ngIf="f.date.errors && f.date.errors.required && isError">Please Enter Event Date</span>
+        </div>
+        <div class="form-group">
+            <label for="isbn">Event Place</label>
+            <input type="text" class="form-control" id="isbn" formControlName="place" name="isbn" />
+            <span class="validation_msg" *ngIf="f.place.errors && f.place.errors.required && isError">Please Enter  Place</span>
+        </div>
+        <div class="form-group">
+            <label for="isbn">No. of Guests</label>
+            <input type="number" class="form-control" id="isbn" formControlName="guest" name="isbn">
+            <span class="validation_msg" *ngIf="f.guest.errors && f.guest.errors.required && isError">Please Enter No. of guest</span>
+        </div>
+        <label for="isbn">Food Type</label>
+        <select class="form-control" id="exampleFormControlSelect1" formControlName="foodtype">
+          <option>Veg Food</option>
+          <option>Non Veg food</option>
+          <option>Both</option>
+          
+          </select><br>
+        <span class="validation_msg" *ngIf="f.foodtype.errors && f.foodtype.errors.required && isError">Please Enter Event foodtype.</span>
+        <br>
+        <label for="isbn">Plan</label>
+        <select class="form-control" id="exampleFormControlSelect1" (change)="prices($event)" formControlName="plan">
+          <option value="Basic">Basic</option>
+          <option value="Pro">Pro</option>
+          <option value="Premium">Premium</option>
+          
+          </select><br>
+          <span class="validation_msg" *ngIf="f.plan.errors && f.plan.errors.required && isError">Please Enter Event foodtype.</span>
+          <br>
+          <label for="isbn">Decorations </label><br>
+          <select class="classic" formControlName="decoration">
+            <option>Yes</option>
+            <option>No</option>
+            
+          </select><br>
+          <span class="validation_msg" *ngIf="f.decoration.errors && f.decoration.errors.required && isError">Please Enter Event decoration.</span>
+          <br><br> <div class="form-group">
+            <label for="isbn">Event Amount</label>
+            <input type="text" *ngIf="this.zuberdata=='Basic'" [ngModel]="a"  class="form-control"  id="isbn" formControlName="price" name="isbn"  />
+            <input type="text" *ngIf="this.zuberdata=='Pro'" [ngModel]="b" class="form-control"  id="isbn" formControlName="price" name="isbn" />
+            <input type="text" *ngIf="this.zuberdata=='Premium'" [ngModel]="c" class="form-control"  id="isbn" formControlName="price" name="isbn" />
+
+         
+        </div><br>
+        <button type="submit"  id="submitBtn" class="btn btn-primary btn-block">Book Event</button>
+    </form>
+
+    
+</div>
+
+<!-- <input type="text" disabled value="{{zuberdata}}"> -->
+

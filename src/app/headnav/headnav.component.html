@@ -1,0 +1,79 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Zuber Event</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav ml-auto">
+      <a class="nav-item nav-link active" routerLink="home">Home</a>
+      <a class="nav-item nav-link" routerLink="services">Services</a>
+      <a class="nav-item nav-link" routerLink="about">About</a>
+      <button class="btn btn-success" [routerLink]="['/sign-in']">Login</button>
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
+<footer class="section bg-footer">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-3">
+              <div class="">
+                  <h6 class="footer-heading text-uppercase text-white">Pages</h6>
+                  <ul class="list-unstyled footer-link mt-4">
+                      <li><a routerLink="headnav/about">Home</a></li>
+                      <li><a href="">About us</a></li>
+                      <li><a routerLink="services">Services</a></li>
+                      <li><a >Pricing</a></li>
+                  </ul>
+              </div>
+          </div>
+
+          <div class="col-lg-3">
+              <div class="">
+                  <h6 class="footer-heading text-uppercase text-white">Types</h6>
+                  <ul class="list-unstyled footer-link mt-4">
+                      <li><a href="">Marriage </a></li>
+                      <li><a href="">Birthday</a></li>
+                      <li><a href="">Get Together</a></li>
+                      <li><a href="">Party</a></li>
+                  </ul>
+              </div>
+          </div>
+
+          <div class="col-lg-2">
+              <div class="">
+                  <h6 class="footer-heading text-uppercase text-white">Help</h6>
+                  <ul class="list-unstyled footer-link mt-4">
+                      <li><button class="btn btn-primary" (click)="signuppage()">Signup</button></li><br>
+                      <li><button class="btn btn-success" (click)="loginpage()">Login</button></li><br>
+                      <li><a href="">Terms of Services</a></li>
+                      
+                  </ul>
+              </div>
+          </div>
+
+          <div class="col-lg-4">
+              <div class="">
+                  <h6 class="footer-heading text-uppercase text-white">Contact Us</h6>
+                  <p class="contact-info mt-4">Contact us if need help withanything</p>
+                  <p class="contact-info">+91 7456235478</p>
+                  <div class="mt-5">
+                      <ul class="list-inline">
+                          <li class="list-inline-item"><a href="#"><i class="fab facebook footer-social-icon fa-facebook-f"></i></a></li>
+                          <li class="list-inline-item"><a href="#"><i class="fab twitter footer-social-icon fa-twitter"></i></a></li>
+                          <li class="list-inline-item"><a href="#"><i class="fab google footer-social-icon fa-google"></i></a></li>
+                          <li class="list-inline-item"><a href="#"><i class="fab apple footer-social-icon fa-apple"></i></a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </div>
+
+  <div class="text-center mt-5">
+      <p class="footer-alt mb-0 f-14">2023 © Zuber, All Rights Reserved</p>
+  </div>
+</footer>
+

@@ -1,0 +1,153 @@
+<div class=" pt-2 pb-2" style="align-items: baseline;">
+    <h3 class="page-title" class="main-title text-center"><span class="text-primary">Event </span> Status</h3>
+</div>
+<div class=" pt-2 pb-2" style="align-items: baseline;">
+    <div class="title-src">
+        <div class="col-sm-9">
+            <!-- <h4 class="page-title" style="margin-bottom: 0px !important;">Staff List</h4> -->
+            <mat-form-field class="full-wid search-wid own-clas set-search-box-matField" floatLabel="never">
+                <div class="srch">
+                    <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
+
+                    <mat-icon
+                        class="edit-color search-icon mat-icon notranslate ng-tns-c31-16 material-icons mat-icon-no-color"
+                        role="img" style="cursor: pointer;" aria-hidden="true" (click)="applyFilter($event)">search
+                    </mat-icon>
+                </div>
+            </mat-form-field>
+        </div>
+        <div class="col-sm-3">
+            <div class="d-flex src">
+                <div class="col-sm-6" >
+                    <a  (click)="addStaff()" class="btn btn-info text-white float-right" style="white-space: nowrap;">Book Event</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="user-manage-list">
+
+    <mat-card class="footer-adjust">
+        <div class="table-responsive">
+            <div class="table-height">
+                <table mat-table class="full-wid" [dataSource]="userData" >
+                    <ng-container matColumnDef="sNo">
+                        <th mat-header-cell *matHeaderCellDef>#</th>
+                        <td mat-cell *matCellDef="let element; let i = index">
+                            {{ (i+1) + (paginator.pageIndex * paginator.pageSize) }}
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="date">
+                        <th mat-header-cell *matHeaderCellDef>Event Date</th>
+                        <td mat-cell *matCellDef="let element">
+                            <div fxLayoutAlign="start center">
+                                <div class="make-ellipse">{{element.date | date:'dd/MM/yyyy' }} </div>
+                            </div>
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="eventtype">
+                        <th mat-header-cell *matHeaderCellDef>Event Type</th>
+                        <td mat-cell *matCellDef="let element">
+                            <div fxLayoutAlign="start center">
+                                <div class="make-ellipse">{{element.eventtype}} </div>
+                            </div>
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="place">
+                        <th mat-header-cell *matHeaderCellDef>Event Place</th>
+                        <td mat-cell *matCellDef="let element">
+                            <div fxLayoutAlign="start center">
+                                <div class="make-ellipse">{{element.place}} </div>
+                            </div>
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="guest">
+                        <th mat-header-cell *matHeaderCellDef>No. of Guests</th>
+                        <td mat-cell *matCellDef="let element">
+                            <div fxLayoutAlign="start center">
+                                <div class="make-ellipse">{{element.guest}} </div>
+                            </div>
+                        </td>
+                    </ng-container>
+                    
+                    <ng-container matColumnDef="foodtype">
+                        <th mat-header-cell *matHeaderCellDef>Food Type</th>
+                        <td mat-cell *matCellDef="let element">
+                            <div fxLayoutAlign="start center">
+                                <div class="make-ellipse">{{element.foodtype}} </div>
+                            </div>
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="plan">
+                        <th mat-header-cell *matHeaderCellDef>Plan</th>
+                        <td mat-cell *matCellDef="let element">
+                            <div fxLayoutAlign="start center">
+                                <div class="make-ellipse">{{element.plan}} </div>
+                            </div>
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="price">
+                        <th mat-header-cell *matHeaderCellDef>Amount</th>
+                        <td mat-cell *matCellDef="let element">
+                            <div fxLayoutAlign="start center">
+                                <div class="make-ellipse">{{element.price}} </div>
+                            </div>
+                        </td>
+                    </ng-container>
+                    
+
+                    <ng-container matColumnDef="payment">
+                        <th mat-header-cell *matHeaderCellDef>payment</th>
+                        <td mat-cell *matCellDef="let element">
+                            <div fxLayoutAlign="start center" *ngIf="!element.Status==true">
+                                <div class="make-ellipse"><a class="btn btn-primary" (click)="pay(element._id)" >Pay</a> </div>
+                            </div>
+                            <div fxLayoutAlign="start center" *ngIf="element.Status==true">
+                                <div class="make-ellipse text-success">Success </div>
+                            </div>
+                            
+                        </td>
+                    </ng-container>
+
+             
+                 
+
+
+
+                   
+                    <ng-container matColumnDef="action">
+                        <th mat-header-cell *matHeaderCellDef>Invoice</th>
+                        <td mat-cell *matCellDef="let element; let i = index">
+                            <div fxLayoutAlign="start center"  *ngIf="element.Status==true">
+                                <div class="make-ellipse">
+                                    <span class="material-icons" style="color:#fff; cursor:pointer" (click)="invoice(element._id)" >receipt</span>
+                                </div>
+                            </div>
+                            <div fxLayoutAlign="start center"  *ngIf="!element.Status==true">
+                                <div class="make-ellipse">
+                                    <span class="text-warning" style="color:#fff; cursor:pointer"  >Pending</span>
+                                </div>
+                            </div>
+                        </td>
+                    </ng-container>
+                  
+                
+                  
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+                </table>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="center center" class="no-data-available" *ngIf="userData?.length === 0">No
+                Data Available
+            </div>
+            <div class="pagination">
+                <mat-paginator #paginator 
+                    [pageSizeOptions]="[10, 25, 50]" ></mat-paginator>
+            </div>
+        </div>
+
+    </mat-card>
+</div>

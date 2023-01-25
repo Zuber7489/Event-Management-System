@@ -1,0 +1,114 @@
+// body{
+//     margin: 0;
+//     padding: 0;
+//   background-color: #e8e8e8e7;;
+//   height: 100vh;
+//   width: 100vw;
+//   display: flex;
+//   justify-content: center;
+//   font-family: 'Ubuntu', sans-serif;
+//   }
+//   .box{
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   border: 1px solid #ccc;
+//   border-radius: 8px;
+//   width: 300px;
+//   margin: 40px;
+//   margin-top: 100px;
+//   margin-left: 509px !important;
+//   padding: 10px;
+//   background-color: aliceblue;
+//   box-shadow: 0px 11px 35px 4px rgba(0, 0, 0, 0.15);
+  
+//   }
+//   h1{
+//     text-align: center;
+//   }
+//   input{
+//     border-radius: 8px;
+//     margin: 0 0 20px;
+//     padding: 10px 15px;
+//     border: 1px solid #ccc;
+//   }
+//   button{
+//     width: 100%;
+//     border-radius: 8px;
+//     padding: 10px 15px;
+//     border: 0;
+//     background-color: rgb(0, 128, 255);
+//     color: white;
+//   }
+//   button:hover{
+//     background-color: rgb(11, 11, 240);
+//   }
+
+
+// body{
+//   margin: 0;
+//   padding: 0;
+// background-color: #e8e8e8e7;;
+// height: 100vh;
+// width: 100vw;
+// display: flex;
+// justify-content: center;
+// font-family: 'Ubuntu', sans-serif;
+// }
+// .box{
+// display: flex;
+// flex-direction: column;
+// justify-content: center;
+// border: 1px solid #ccc;
+// border-radius: 8px;
+// width: 300px;
+// margin: 40px;
+// margin-top: 200px;
+// margin-left: 479px !important;
+// padding: 10px;
+// background-color: aliceblue;
+// box-shadow: 0px 11px 35px 4px rgba(0, 0, 0, 0.15);
+
+// }
+// h1{
+//   text-align: center;
+// }
+// input{
+//   border-radius: 8px;
+//   margin: 0 0 20px;
+//   padding: 10px 15px;
+//   border: 1px solid #ccc;
+// }
+// button{
+//   width: 100%;
+//   border-radius: 8px;
+//   padding: 10px 15px;
+//   border: 0;
+//   background-color: rgb(0, 128, 255);
+//   color: white;
+// }
+// button:hover{
+//   background-color: rgb(11, 11, 240);
+// }
+
+
+body {
+  background: #f7f7ff;
+  
+}
+
+.btn-login {
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+  padding: 0.75rem 1rem;
+}
+
+.btn-google {
+  color: white !important;
+  background-color: #ea4335;
+}
+
+.btn-facebook {
+  color: white !important;
+  background-color: #3b5998;
+}

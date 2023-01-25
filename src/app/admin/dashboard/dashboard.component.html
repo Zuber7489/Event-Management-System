@@ -1,0 +1,35 @@
+<h1 class=" text-center"><span class="text-primary">Check Event </span> Availability</h1>
+<form [formGroup]="checkForm">
+	<div class="form-group">
+	  <label for="exampleFormControlInput1">Event date </label>
+	  <input type="date"  class="form-control" formControlName="date" id="exampleFormControlInput1" placeholder="Event Date">
+	</div><br><span></span>
+	<div class="form-group">
+	  <label for="exampleFormControlSelect1">Event Type</label>
+	  <select class="form-control" formControlName="typer" id="exampleFormControlSelect1">
+		<option>Select Event</option>
+		<option>Marriage</option>
+		<option>Birthday</option>
+		<option>Party</option>
+		
+	  </select>
+	</div><br>
+	<div class="form-group">
+		<label for="exampleFormControlSelect1">Event Place</label>
+		<select class="form-control" formControlName="placer" id="exampleFormControlSelect1">
+			<option>Select Event Place</option>
+			<option>Royal Orchid</option>
+		  <option>Sangam Palace</option>
+		  <option>Waghela Ji Marriage Garden</option>
+		  <option >Swagat Garden</option>
+		  
+		</select>
+	  </div>
+<br>
+<button class="btn btn-primary btn-block" type="submit" (click)="onSubmit()">Search</button><br><br>
+<h3 class="text-success" *ngIf="show">This Slot is Available</h3>
+<h3 class="text-success">1){{zuberdata.date}}</h3>
+<h3 class="text-success">2){{zuberdata.typer}}</h3>
+<h3 class="text-success">3){{zuberdata.placer}}</h3>
+
+  </form>
