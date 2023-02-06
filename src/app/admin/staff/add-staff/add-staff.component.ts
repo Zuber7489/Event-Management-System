@@ -44,7 +44,7 @@ export class AddStaffComponent implements OnInit {
     if (this.meraForm.invalid) {
       this.isError = true;
     } else {
-      this.http.post('http://localhost:3000/employee/addevent', this.meraForm.value).subscribe(res => {
+      this.http.post('https://event-r2eh.onrender.com/employee/addevent', this.meraForm.value).subscribe(res => {
         this.toastr.success('Booked successfull');
     console.log(this.meraForm.value);
     

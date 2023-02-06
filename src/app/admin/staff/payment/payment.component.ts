@@ -41,7 +41,7 @@ export class PaymentComponent implements OnInit {
       this.data = {
         "Status":"true",
       }
-      this.http.put('http://localhost:3000/employee/eventlist/data/'+this.id, this.data).subscribe(res => {
+      this.http.put('https://event-r2eh.onrender.com/employee/eventlist/data/'+this.id, this.data).subscribe(res => {
         console.log(res,'checking');
         this.toaster.success('Payment Done')
   this.router.navigate(['admin/staff'])

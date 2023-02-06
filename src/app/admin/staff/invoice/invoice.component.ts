@@ -22,7 +22,7 @@ export class InvoiceComponent implements OnInit {
   }
 zuberdata:any;
   invoice(){
-    this.http.put('http://localhost:3000/employee/eventlist/data/'+this.id, this.datas).subscribe(res => {
+    this.http.put('https://event-r2eh.onrender.com/employee/eventlist/data/'+this.id, this.datas).subscribe(res => {
 this.zuberdata = res;
 console.log(this.zuberdata.eventtype);
 

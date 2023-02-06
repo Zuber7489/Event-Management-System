@@ -23,7 +23,7 @@ export class SignupComponent implements OnInit {
   })
 
   signupUser(){
-this.http.post('http://localhost:3000/employee/signup',this.signupForms.value).subscribe(res=>{
+this.http.post('https://event-r2eh.onrender.com/employee/signup',this.signupForms.value).subscribe(res=>{
   console.log(res,"data aya")
   alert('Signin Successfully')
   this.router.navigate(['sign-in'])

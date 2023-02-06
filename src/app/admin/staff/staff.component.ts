@@ -41,7 +41,7 @@ export class StaffComponent implements OnInit {
  
   
   getAllStaff() {
-   this.http.get('http://localhost:3000/employee/eventlist/data').subscribe(res=>{
+   this.http.get('https://event-r2eh.onrender.com/employee/eventlist/data').subscribe(res=>{
 
 console.log(res)
 this.userData = res
