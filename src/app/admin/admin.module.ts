@@ -22,6 +22,7 @@ import { AddStaffComponent } from './staff/add-staff/add-staff.component';
 import { PaymentComponent } from './staff/payment/payment.component';
 import { InvoiceComponent } from './staff/invoice/invoice.component';
 import { ProfileComponent } from './profile/profile.component';
+import { PlanComponent } from './plan/plan.component';
 
 
 
@@ -50,6 +51,7 @@ import { ProfileComponent } from './profile/profile.component';
    PaymentComponent,
    InvoiceComponent,
    ProfileComponent,
+   PlanComponent,
    
 
   ],

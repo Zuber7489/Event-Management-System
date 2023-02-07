@@ -1,5 +1,5 @@
-<!-- <h1 class=" text-center"><span class="text-primary">Check Event </span> Availability</h1>
-<form [formGroup]="checkForm">
+<h1 class=" text-center"><span class="text-primary">Check Event </span> Availability</h1>
+<form >
 	<div class="form-group">
 	  <label for="exampleFormControlInput1">Event date </label>
 	  <input type="date"  class="form-control" formControlName="date" id="exampleFormControlInput1" placeholder="Event Date">
@@ -27,9 +27,6 @@
 	  </div>
 <br>
 <button class="btn btn-primary btn-block" type="submit" (click)="onSubmit()">Search</button><br><br>
-<h3 class="text-success" *ngIf="show">This Slot is Available</h3>
-<h3 class="text-success">1){{zuberdata.date}}</h3>
-<h3 class="text-success">2){{zuberdata.typer}}</h3>
-<h3 class="text-success">3){{zuberdata.placer}}</h3>
 
-  </form> -->
+<h1 class="text-success" *ngIf="show">This Slot is Availabile.</h1>
+  </form>

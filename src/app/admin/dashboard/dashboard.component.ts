@@ -12,11 +12,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class DashboardComponent implements OnInit {
 
 
-  checkForm = new FormGroup({
-    date: new FormControl(''),
-    typer: new FormControl(''),
-    placer: new FormControl('')
-  })
+ 
 
   show = false;
 
@@ -35,7 +31,7 @@ export class DashboardComponent implements OnInit {
   zuberdata: any
   onSubmit() {
     this.show=true
-    this.zuberdata = this.checkForm.value;
+    
     // alert('This Event Slot is Available.');
 
   }
