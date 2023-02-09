@@ -1,14 +1,7 @@
-
-  <!-- <main class="container"> -->
-    <!-- <div class="main"> -->
-
-
-      <!-- Payment Method Section  -->
-      <!-- <section class="payment_method"> -->
-        <h2 class="ship_head text-center text-success">Payment Method</h2>
+        <!-- <h2 class="ship_head text-center text-success">Payment Method</h2>
         <div class="card_info">
           <div class="card_head">
-            <h2 class="card_title">Debit or Credit Card</h2>
+            <h2 class="card_title">Personal details</h2>
           </div>
           <div class="card_types">
             <img class="card_img" src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="" />
@@ -17,10 +10,10 @@
             <img class="card_img" src="https://img.icons8.com/fluency/512/mastercard.png" alt="" />
           </div>
           <form [formGroup]="paymentForm" >
-            <input type="text" name="Name" value="" formControlName="name" placeholder="Card Holder" maxlength="60" />
+            <input type="text" name="Name" value="" formControlName="name" placeholder="Your Name" maxlength="60" />
             <span class="validation_msg" *ngIf="f.name.errors && f.name.errors.required && isError">Please Enter Name.</span>
-            <input type="text" name="Number" value="" formControlName="number" placeholder="Card Number" maxlength="16" />
-            <span class="validation_msg" *ngIf="f.number.errors && f.number.errors.required && isError">Please Enter Card Number.</span>
+            <input type="text" name="Number" value="" formControlName="number" placeholder="Ph. Number" maxlength="16" />
+            <span class="validation_msg" *ngIf="f.number.errors && f.number.errors.required && isError">Please Enter Number.</span>
             <div>
               <input type="text" name="Name" value="" formControlName="expire" placeholder="Expire" maxlength="4" />
               <span class="validation_msg" *ngIf="f.expire.errors && f.expire.errors.required && isError">Please Enter Expiry Date.</span>
@@ -31,21 +24,50 @@
           </form>
           
         </div>
-        <!-- <div class="e_payment">
-          <div class="pay">
-            <img src="https://cdn-icons-png.flaticon.com/512/6124/6124998.png" alt="" />
-          </div>
-          <div class="pay">
-            <img src="https://cdn-icons-png.flaticon.com/512/5977/5977576.png" alt="" />
-          </div>
-          <div class="pay">
-            <img src="https://cdn-icons-png.flaticon.com/512/196/196565.png" alt="" />
-          </div>
-        </div> -->
-       
-      <!-- </section> -->
-   
-   
-    <!-- </div> -->
-  <!-- </main> -->
+        -->
 
+
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<div class="container">
+  <div id="Checkout" class="inline">
+      <h1>Pay Invoice</h1>
+      <div class="card-row">
+          <span class="visa"></span>
+          <span class="mastercard"></span>
+          <span class="amex"></span>
+          <span class="discover"></span>
+      </div>
+      <form>
+          <div class="form-group">
+              <label for="PaymentAmount">Payment amount</label>
+              <div class="amount-placeholder">
+                  <span></span>
+                  <span>{{zuberdata.price}}</span>
+              </div>
+          </div>
+          <div class="form-group">
+              <label or="NameOnCard">Name</label>
+              <input id="NameOnCard" class="form-control" value="{{data.name}}" type="text" maxlength="255">
+          </div>
+          <div class="form-group">
+              <label for="CreditCardNumber">Number</label>
+              <input id="CreditCardNumber" value="{{data.number}}" class="null card-image form-control" type="text">
+          </div>
+          
+         
+          <div class="zip-code-group form-group">
+              <label for="ZIPCode">Email</label>
+              <div class="input-container">
+                  <input id="ZIPCode" value="{{data.email}}" class="form-control" type="text" maxlength="10">
+                  <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Enter the ZIP/Postal code for your credit card billing address."></a>
+              </div>
+          </div><br>
+          <button id="PayButton" (click)="initializePayment(200000)" class="btn btn-block btn-success submit-button" type="submit">
+              <span class="submit-button-lock"></span>
+              <span class="align-middle">Pay {{zuberdata.price}}</span>
+          </button>
+      </form>
+  </div>
+</div>

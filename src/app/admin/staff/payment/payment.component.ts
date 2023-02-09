@@ -4,51 +4,89 @@ import {HttpClient} from '@angular/common/http'
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
+
+declare var Razorpay: any;
+
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
   styleUrls: ['./payment.component.scss']
 })
 export class PaymentComponent implements OnInit {
+  paymentHandler:any = null;
   isError: boolean = false;
   id: any;
+  sessionData:any;
   data:any;
-  constructor( private route: ActivatedRoute,private router: Router,public http:HttpClient,private toaster:ToastrService) { }
+  constructor( private route: ActivatedRoute,private router: Router,public http:HttpClient,private toaster:ToastrService) { this.sessionData = sessionStorage.getItem('adminDetail');
+  this.data = JSON.parse(this.sessionData);
+  }
   ngOnInit(): void {
     this.id = this.route.snapshot.queryParamMap.get('id');
-    
+    this.invoice();
+    this.invokeStripe();
   }
 
-
-  paymentForm = new FormGroup({
-    name : new FormControl('',Validators.required),
-    number : new FormControl('',Validators.required),
-    expire : new FormControl('',Validators.required),
-    cvc: new FormControl('',Validators.required)
-  })
-
-  public get f() {
-    return this.paymentForm.controls;
-  }
-
-
-
-
-  Data(){
-    if (this.paymentForm.invalid) {
-      this.isError = true;
-    } else {
-      this.data = {
-        "Status":"true",
+  initializePayment(amount: number) {
+    const paymentHandler = (<any>window).StripeCheckout.configure({
+      key: 'pk_test_sLUqHXtqXOkwSdPosC8ZikQ800snMatYMb',
+      locale: 'auto',
+      token: function (stripeToken: any) {
+        console.log({stripeToken})
+        alert('Stripe token generated!');
       }
-      this.http.put('https://event-r2eh.onrender.com/employee/eventlist/data/'+this.id, this.data).subscribe(res => {
-        console.log(res,'checking');
-        this.toaster.success('Payment Done')
-  this.router.navigate(['admin/staff'])
-      })
-    }
-  
+    });
+
+    paymentHandler.open({
+      name: 'Zuber Event',
+      description: 'Secured Payment',
+      amount: amount * 100
+    });
   }
+
+  invokeStripe() {
+    if(!window.document.getElementById('stripe-script')) {
+      const script = window.document.createElement("script");
+      script.id = "stripe-script";
+      script.type = "text/javascript";
+      script.src = "https://checkout.stripe.com/checkout.js";
+      script.onload = () => {
+        this.paymentHandler = (<any>window).StripeCheckout.configure({
+          key: 'pk_test_sLUqHXtqXOkwSdPosC8ZikQ800snMatYMb',
+          locale: 'auto',
+          token: function (stripeToken: any) {
+            console.log(stripeToken)
+            alert('Payment has been successfull!');
+          }
+        });
+      }
+      window.document.body.appendChild(script);
+    }
+  }
+
+
+
+  
+  datas:any;
+zuberdata:any;
+  invoice(){
+    this.http.put('https://event-r2eh.onrender.com/employee/eventlist/data/'+this.id, this.datas).subscribe(res => {
+this.zuberdata = res;
+console.log(this.zuberdata.eventtype);
+
+    })
+
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
