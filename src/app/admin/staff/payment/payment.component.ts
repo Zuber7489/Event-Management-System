@@ -38,7 +38,7 @@ export class PaymentComponent implements OnInit {
     });
 
     paymentHandler.open({
-      name: 'Zuber Event',
+      name: 'Event Booking',
       description: 'Secured Payment',
       amount: amount * 100
     });
