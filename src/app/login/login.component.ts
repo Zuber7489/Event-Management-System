@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Form, FormControl,FormGroup } from '@angular/forms';
+import { Form, FormBuilder, FormControl,FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -16,6 +16,8 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  
+
   constructor(public http:HttpClient,private router: Router,private toaster:ToastrService) { }
   // declare loginForm: FormGroup;
   // constructor(private router: Router, public fb: FormBuilder, private toastr: ToastrService, public authService: AuthService,
@@ -24,9 +26,34 @@ export class LoginComponent implements OnInit {
   // }
   ngOnInit() {
     this.loginuser()
-  }
+   
+    // @ts-ignore
+  google.accounts.id.initialize({
+    client_id: "269829266947-sp6qek3ksaat8701d9okr3g01p14n0e0.apps.googleusercontent.com",
+    callback: this.handleCredentialResponse.bind(this),
+    auto_select: false,
+    cancel_on_tap_outside: true,
 
+  });
+  // @ts-ignore
+  google.accounts.id.renderButton(
+  // @ts-ignore
+  document.getElementById("google-button"),
+    { theme: "outline", size: "xl-large", width: "100%" }
+  );
+  // @ts-ignore
+  google.accounts.id.prompt((notification: PromptMomentNotification) => {});
+  }
   
+  zuberdata:any;
+  async handleCredentialResponse(response: any) {
+    // Here will be your response from Google.
+    console.log(response);
+    this.zuberdata=response;
+    sessionStorage.setItem("adminDetail", JSON.stringify(response));
+    this.router.navigate(['admin'])
+    // alert('successfully login')
+  }
 
   loginForms= new FormGroup({
     email: new FormControl(''),
@@ -52,5 +79,7 @@ export class LoginComponent implements OnInit {
   }
 
   
+
+
 
 }

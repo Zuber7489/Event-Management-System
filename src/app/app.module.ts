@@ -10,7 +10,7 @@ import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
 
 import { ToastrModule } from 'ngx-toastr';
-import { UiSwitchModule } from 'ngx-ui-switch'
+import { UiSwitchModule } from 'ngx-ui-switch';
 
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
@@ -77,7 +77,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
             positionClass: 'toast-top-right'
         }),
         UiSwitchModule,
-        PerfectScrollbarModule,
+        PerfectScrollbarModule
         
         
     ]
