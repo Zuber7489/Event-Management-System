@@ -33,15 +33,17 @@ export class PaymentComponent implements OnInit {
       locale: 'auto',
       token: function (stripeToken: any) {
         console.log({stripeToken})
-        alert('Stripe token generated!');
+        alert('Payment Done!');
       }
     });
+    
 
     paymentHandler.open({
       name: 'Event Booking',
       description: 'Secured Payment',
       amount: amount * 100
     });
+    this.router.navigate(['admin/staff']);
   }
 
   invokeStripe() {
