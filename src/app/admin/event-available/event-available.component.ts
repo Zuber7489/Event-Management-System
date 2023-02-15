@@ -32,7 +32,7 @@ export class EventAvailableComponent implements OnInit {
     this.dataSource.filterPredicate = this.createFilter();
   }
 
- 
+  httpOptions:any;
   data: any;
   sessionData:any;
   ngOnInit(): void {
@@ -45,15 +45,15 @@ export class EventAvailableComponent implements OnInit {
  
   
   getAllStaff() {
-    const httpOptions = {
-      headers:new HttpHeaders().set('token',`${this.data.token}`)
-    }
-    console.log(httpOptions);
+    this.httpOptions = {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${this.data.token}`)
+    };
     
-   this.http.get('https://event-r2eh.onrender.com/employee/eventlist/userdata').subscribe(res=>{
+   this.http.get('https://event-r2eh.onrender.com/employee/eventlist/userdata',this.httpOptions).subscribe(res=>{
 
-console.log(res)
-this.userData = res
+     this.userData = [res]
+     console.log(this.userData)
    })
   }
   

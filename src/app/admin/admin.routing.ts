@@ -10,7 +10,7 @@ import { UserManagementComponent } from "./user-management/user-management.compo
 
 export const ADMIN_ROUTING: Routes=[
 
-    {path:'', redirectTo:'profile',pathMatch:'full'},
+    // {path:'', redirectTo:'profile',pathMatch:'full'},
     // {path:'',loadChildren: ()=> import('./../shared/routes/full-layout.routes').then(m=>m.Full_ROUTES),canActivate:[AuthGuard]},
     {path:'event-available',component:EventAvailableComponent},
     {path:'dashboard',component:DashboardComponent},

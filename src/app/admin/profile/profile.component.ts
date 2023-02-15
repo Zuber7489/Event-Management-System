@@ -12,6 +12,7 @@ export class ProfileComponent implements OnInit {
   constructor() { 
     this.sessionData = sessionStorage.getItem('adminDetail');
     this.data = JSON.parse(this.sessionData);
+    console.log(this.data.userDetails,'prfile')
   }
 
   

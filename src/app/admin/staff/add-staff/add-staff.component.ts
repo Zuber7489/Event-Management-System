@@ -4,7 +4,7 @@ import { ThreeDServiceService } from 'src/app/service/three-dservice.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { ActivatedRoute, Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -30,25 +30,33 @@ export class AddStaffComponent implements OnInit {
     })
   }
 
-
+  data: any;
+  sessionData:any;
 
   ngOnInit(): void {
-
+    this.sessionData = sessionStorage.getItem('adminDetail');
+    this.data = JSON.parse(this.sessionData);
+    console.log(this.data.token);
   }
 
   public get f() {
     return this.meraForm.controls;
   }
 
+  httpOptions:any;
   onSubmit() {
     if (this.meraForm.invalid) {
       this.isError = true;
     } else {
-      this.http.post('https://event-r2eh.onrender.com/employee/addevent', this.meraForm.value).subscribe(res => {
+      this.httpOptions = {
+        headers: new HttpHeaders()
+          .set('Authorization', `Bearer ${this.data.token}`)
+      };
+      this.http.post('https://event-r2eh.onrender.com/employee/addevent', this.meraForm.value,this.httpOptions).subscribe(res => {
         this.toastr.success('Booked successfull');
     console.log(this.meraForm.value);
     
-    this.router.navigate(['admin/staff'])
+    this.router.navigate(['admin/event-available'])
       })
 
     }

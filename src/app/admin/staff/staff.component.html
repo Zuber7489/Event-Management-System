@@ -99,7 +99,7 @@
                         <th mat-header-cell *matHeaderCellDef>payment</th>
                         <td mat-cell *matCellDef="let element">
                             <div fxLayoutAlign="start center" *ngIf="!element.Status==true">
-                                <div class="make-ellipse"><a class="btn btn-primary" (click)="pay(element._id)" >Pay</a> </div>
+                                <div class="make-ellipse" class="text-warning">Unsuccess </div>
                             </div>
                             <div fxLayoutAlign="start center" *ngIf="element.Status==true">
                                 <div class="make-ellipse text-success">Success </div>

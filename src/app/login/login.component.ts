@@ -38,7 +38,7 @@ let data = {'email': "admin@gmail.com",
 'number': "9977131706" }
 sessionStorage.setItem("adminDetail", JSON.stringify(data));
         this.toaster.success('Login SuccessFully')
-        this.router.navigate(['admin'])
+        this.router.navigate(['admin/dashboard'])
         
       }) 
     }else{
@@ -48,7 +48,7 @@ this.http.post('https://event-r2eh.onrender.com/employee/loginEvent', this.login
         
         
         this.toaster.success('Login SuccessFully')
-        this.router.navigate(['admin'])
+        this.router.navigate(['admin/profile'])
         
       }) 
     }
