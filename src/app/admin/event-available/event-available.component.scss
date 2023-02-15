@@ -1,0 +1,76 @@
+.pagination {
+    float        : right;
+    padding-right: 4px;
+}
+table.full-wid.mat-table th {
+    font-weight   : bold !important;
+    color         : #000;
+    text-transform: capitalize;
+    font-size     : 14px;
+    letter-spacing: .5px;
+}
+table.mat-table {
+    width: 100%;
+}
+table.mat-table .mat-header-row thead {
+    background: red !important;
+}
+.make-ellipse {
+    display: flex;
+}
+.make-ellipse mat-icon {
+    font-size: 20px;
+    margin-left: 5px;
+}
+.srch {
+    display: flex;
+}
+.src{
+    align-items: flex-end;
+    justify-content: end;
+}
+.title-src {
+    display: flex;
+    background: #eee;
+    align-items: center;
+    border-radius: 3px;
+    padding: 0px 20px;
+    border-top-left-radius: 34px;
+    border-bottom-right-radius: 40px;
+}
+tr.mat-header-row {
+    background: #eee;
+}
+span.view-btn {
+    cursor: pointer;
+}
+th.mat-header-cell {
+    text-align: left;
+    position: sticky;
+    top: 0;
+    background: #eee;
+    z-index: 999;
+}
+.table-height{
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #333!important;
+}
+
+.main-title {
+    margin-bottom: 0;
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.btn-primary {
+    background-color: #FCE101;
+    border-color: #FCE101;
+    color: #000;
+}
+
+
+

@@ -23,6 +23,8 @@ import { PaymentComponent } from './staff/payment/payment.component';
 import { InvoiceComponent } from './staff/invoice/invoice.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PlanComponent } from './plan/plan.component';
+import { EventAvailableComponent } from './event-available/event-available.component';
+import { UserManagementComponent } from './user-management/user-management.component';
 
 
 
@@ -52,6 +54,8 @@ import { PlanComponent } from './plan/plan.component';
    InvoiceComponent,
    ProfileComponent,
    PlanComponent,
+   EventAvailableComponent,
+   UserManagementComponent,
    
 
   ],
