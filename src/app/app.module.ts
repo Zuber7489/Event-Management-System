@@ -6,7 +6,7 @@ import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AppComponent } from './app.component';
 
 import { ToastrModule } from 'ngx-toastr';
@@ -47,6 +47,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         LoginComponent,
         FullLayoutComponent,
         HomeComponent,
+        
         ServicesComponent,
         HeadnavComponent,
         SignupComponent,
@@ -61,6 +62,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
         BrowserAnimationsModule,
         NgxSpinnerModule,
         AppRoutingModule,
+        Ng2SearchPipeModule,
         MatInputModule,
         MatButtonModule,
         MatSlideToggleModule,

@@ -7,21 +7,17 @@ import { ToastrService } from 'ngx-toastr';
 import { ThreeDServiceService } from 'src/app/service/three-dservice.service';
 import { Router } from '@angular/router';
 import { MatSort, Sort } from '@angular/material/sort';
-import {HttpClient} from '@angular/common/http'
+import {HttpClient, HttpHeaders} from '@angular/common/http'
 import { query } from '@angular/animations';
 import { FormControl } from '@angular/forms';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
 @Component({
-  selector: 'app-staff',
-  templateUrl: './staff.component.html',
-  styleUrls: ['./staff.component.scss'],
-  host: {
-    "[@fadeInAnimation]": 'true'
-  },
-  animations: [fadeInAnimation]
+  selector: 'app-event-available',
+  templateUrl: './event-available.component.html',
+  styleUrls: ['./event-available.component.scss']
 })
-export class StaffComponent implements OnInit {
+export class EventAvailableComponent implements OnInit {
+
   @ViewChild(MatSort)
   sort!: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator !: MatPaginator;
@@ -37,15 +33,24 @@ export class StaffComponent implements OnInit {
   }
 
  
-
+  data: any;
+  sessionData:any;
   ngOnInit(): void {
+    this.sessionData = sessionStorage.getItem('adminDetail');
+    this.data = JSON.parse(this.sessionData);
+    console.log(this.data.token);
     
     this.getAllStaff();
   }
  
   
   getAllStaff() {
-   this.http.get('https://event-r2eh.onrender.com/employee/eventlist/data').subscribe(res=>{
+    const httpOptions = {
+      headers:new HttpHeaders().set('token',`${this.data.token}`)
+    }
+    console.log(httpOptions);
+    
+   this.http.get('https://event-r2eh.onrender.com/employee/eventlist/userdata').subscribe(res=>{
 
 console.log(res)
 this.userData = res

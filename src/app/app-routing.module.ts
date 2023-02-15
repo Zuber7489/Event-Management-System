@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+
 
 import { FullLayoutComponent } from './admin/layouts/full-layout/full-layout.component';
 import { AboutComponent } from './headnav/about/about.component';
@@ -21,10 +23,12 @@ const routes: Routes = [
 children :[
   { path:'home', component: HomeComponent },
   {path:'services',component:ServicesComponent},
-  {path:'about',component:AboutComponent}
+  {path:'about',component:AboutComponent},
+  
+  
 ]
 },
-
+{path:'admin-panel',component:AdminPanelComponent},
   { path:'sign-in', component: LoginComponent },
  {path:'signup', component:SignupComponent},
   { path:'admin', component: FullLayoutComponent,

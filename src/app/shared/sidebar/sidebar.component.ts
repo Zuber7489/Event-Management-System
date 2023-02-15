@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {  ROUTES } from './sidebar-routes.config';
+import {  AdminRoutes, ROUTES } from './sidebar-routes.config';
 import { Router, Event, NavigationStart, NavigationEnd, NavigationError } from '@angular/router';
 import { SidebarService } from "../sidebar/sidebar.service";
 
@@ -90,7 +90,15 @@ export class SidebarComponent implements OnInit {
     ngOnInit() {
         $("#lg-logo").show();
         $("#sm-logo").hide();
-        this.menuItems = ROUTES.filter(menuItem => menuItem);
+        let roleadd:any =  sessionStorage.getItem("adminDetail");
+        let data = JSON.parse(roleadd)
+        console.log(data.name);
+        
+        if(data.name=="admin"){
+            this.menuItems = AdminRoutes.filter(menuItem => menuItem);
+        }else{
+            this.menuItems = ROUTES.filter(menuItem => menuItem);
+        }
     $.getScript('./assets/js/app-sidebar.js');
 
     }
