@@ -47,9 +47,7 @@ body {
   transition: background 0.3s ease-in-out;
 }
 
-/* ............/navbar/............ *
 
-/* desktop mode............/// */
 
 .navbar input[type="checkbox"],
 .navbar .hamburger-lines {
@@ -199,7 +197,7 @@ body {
 /* ..........////Food category///........... */
 
 #food {
-  padding: 5rem 0 10rem 0;
+  padding: 2.8rem 0 2rem 0;
 }
 
 #food h2 {
@@ -281,7 +279,8 @@ body {
 
 .food-menu-heading {
   text-align: center;
-  font-size: 3.4rem;
+  font-size: 3.0rem;
+  margin-top: 43px;
   font-weight: 400;
   color: #666;
 }
