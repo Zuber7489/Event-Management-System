@@ -32,8 +32,8 @@ children :[
   { path:'sign-in', component: LoginComponent },
  {path:'signup', component:SignupComponent},
   { path:'admin', component: FullLayoutComponent,
-  loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
-  // children:Full_ROUTES,canActivate:[AuthGuard]
+  // loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
+  children:Full_ROUTES,canActivate:[AuthGuard]
  },
  
  {path:'navbar',component:NavbarComponent}

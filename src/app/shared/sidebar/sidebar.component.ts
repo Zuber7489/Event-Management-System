@@ -92,9 +92,8 @@ export class SidebarComponent implements OnInit {
         $("#sm-logo").hide();
         let roleadd:any =  sessionStorage.getItem("adminDetail");
         let data = JSON.parse(roleadd)
-        console.log(data.name);
-        
-        if(data.name=="admin"){
+        console.log(data.userDetails.name,'sidebar');
+        if(data.userDetails.name=="admin"){
             this.menuItems = AdminRoutes.filter(menuItem => menuItem);
         }else{
             this.menuItems = ROUTES.filter(menuItem => menuItem);

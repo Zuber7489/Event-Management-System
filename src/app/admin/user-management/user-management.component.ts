@@ -16,7 +16,6 @@ export class UserManagementComponent implements OnInit {
   zuberdata:any;
   token = sessionStorage.getItem('adminDetail')
   ngOnInit(): void {
-    console.log(this.token)
     this.count++;
     this.http.get('https://event-r2eh.onrender.com/employee/signup/alldata', {
       headers: new HttpHeaders({
