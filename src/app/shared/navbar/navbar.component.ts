@@ -45,7 +45,7 @@ export class NavbarComponent implements OnInit {
     }
     logout(){
         sessionStorage.removeItem('adminDetail');
-        this.toaster.success('Logout Successful')
+        this.toaster.info('Logout Successfull');
         this.router.navigate(['headnav/home']);
     }
     changePassword(){
