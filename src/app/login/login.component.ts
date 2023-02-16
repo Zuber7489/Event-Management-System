@@ -38,17 +38,19 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['admin/dashboard'])
 
       })
-    } else {
+      }
+     else {
       this.http.post('https://event-r2eh.onrender.com/employee/loginEvent', this.loginForms.value).subscribe(res => {
 
         sessionStorage.setItem("adminDetail", JSON.stringify(res));
         this.toaster.success('Login SuccessFully')
         this.router.navigate(['admin/profile'])
-
+        
       })
+        
     }
-
     this.toaster.error('username or password is incorrect')
+    
   }
 
 
