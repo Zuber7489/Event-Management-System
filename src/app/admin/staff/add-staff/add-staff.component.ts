@@ -47,6 +47,7 @@ export class AddStaffComponent implements OnInit {
   onSubmit() {
     if (this.meraForm.invalid) {
       this.isError = true;
+      this.toastr.error('Please fill the above details');
     } else {
       this.httpOptions = {
         headers: new HttpHeaders()

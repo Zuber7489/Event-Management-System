@@ -3,6 +3,7 @@ import { Form, FormBuilder, FormControl, FormGroup, Validators } from '@angular/
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { error } from '@angular/compiler/src/util';
 
 
 @Component({
@@ -37,19 +38,24 @@ export class LoginComponent implements OnInit {
         this.toaster.success('Login SuccessFully')
         this.router.navigate(['admin/dashboard'])
 
-      })
-      }
-     else {
+      }, error => {
+        this.toaster.error('Invalid username or password');
+      });
+    
+    } else{
       this.http.post('https://event-r2eh.onrender.com/employee/loginEvent', this.loginForms.value).subscribe(res => {
 
         sessionStorage.setItem("adminDetail", JSON.stringify(res));
         this.toaster.success('Login SuccessFully')
         this.router.navigate(['admin/profile'])
         
+      },
+      error => {
+        this.toaster.error('Invalid username or password');
       })
         
     }
-    this.toaster.error('username or password is incorrect')
+    
     
   }
 
