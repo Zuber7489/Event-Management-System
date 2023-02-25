@@ -1,3 +1,7 @@
+<head>
+
+</head>
+
 <div class=" pt-2 pb-2" style="align-items: baseline;">
     <h3 class="page-title" class="main-title text-center"><span class="text-primary">ALL </span> Bookings</h3>
 </div>
@@ -114,22 +118,31 @@
 
 
                    
-                    <ng-container matColumnDef="action">
-                        <th mat-header-cell *matHeaderCellDef>Invoice</th>
-                        <td mat-cell *matCellDef="let element; let i = index">
-                            <div fxLayoutAlign="start center"  *ngIf="element.Status==true">
-                                <div class="make-ellipse">
-                                    <span class="material-icons" style="color:#fff; cursor:pointer" (click)="invoice(element._id)" >receipt</span>
-                                </div>
-                            </div>
-                            <div fxLayoutAlign="start center"  *ngIf="!element.Status==true">
-                                <div class="make-ellipse">
-                                    <span class="text-warning" style="color:#fff; cursor:pointer"  >Pending</span>
-                                </div>
-                            </div>
-                        </td>
-                    </ng-container>
+             
                   
+                    <!-- <ng-container matColumnDef="action">
+                        <th mat-header-cell *matHeaderCellDef>action</th>
+                        <td mat-cell *matCellDef="let element">
+                            <div fxLayoutAlign="start center">
+                                <input onclick="this.value='Success'" type="button" value="Pending" class="btn btn-info" />
+                            </div>
+                            
+                            
+                        </td>
+                    </ng-container> -->
+
+                    <ng-container matColumnDef="action">
+						<th mat-header-cell *matHeaderCellDef>Action</th>
+						<td mat-cell *matCellDef="let element">
+							<div fxLayoutAlign="start center">
+								<div class="make-ellipse">
+									<mat-slide-toggle [checked]="element.action== 'active'" class="example-margin"
+										(change)="changeStatus($event,element._id)" color="primary">
+									</mat-slide-toggle>
+								</div>
+							</div>
+						</td>
+					</ng-container>
                 
                   
                     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -147,3 +160,5 @@
 
     </mat-card>
 </div>
+
+

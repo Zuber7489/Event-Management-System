@@ -49,18 +49,18 @@
           </div>
           <div class="form-group">
               <label or="NameOnCard">Name</label>
-              <input id="NameOnCard" disabled class="form-control" value="{{data.name}}" type="text" maxlength="255">
+              <input id="NameOnCard" disabled class="form-control" value="{{data.userDetails.name}}" type="text" maxlength="255">
           </div>
           <div class="form-group">
               <label for="CreditCardNumber">Number</label>
-              <input id="CreditCardNumber" disabled value="{{data.number}}" class="null card-image form-control" type="text">
+              <input id="CreditCardNumber" disabled value="{{data.userDetails.number}}" class="null card-image form-control" type="text">
           </div>
           
          
           <div class="zip-code-group form-group">
               <label for="ZIPCode">Email</label>
               <div class="input-container">
-                  <input id="ZIPCode" disabled value="{{data.email}}" class="form-control" type="text" maxlength="10">
+                  <input id="ZIPCode" disabled value="{{data.userDetails.email}}" class="form-control" type="text" maxlength="10">
                   <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Enter the ZIP/Postal code for your credit card billing address."></a>
               </div>
           </div><br>

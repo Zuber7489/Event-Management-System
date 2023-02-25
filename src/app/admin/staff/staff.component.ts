@@ -86,4 +86,40 @@ this.userData = res
     return filterFunction;
   }
 
+
+  changeStatus(event: any,id: any,) {
+    
+    if(event.checked){
+      this.http.get('https://event-r2eh.onrender.com/employee/eventlist/'+ id +'?action=active').subscribe(res => {
+        if (res) {
+          console.log(res);
+          this.toastr.success('Active succesfully');
+        } else {
+          this.toastr.error('error');
+        }
+      }, error => {
+        this.threeDService.hide();
+        this.toastr.error('Technical Issue.')
+        console.log(error);
+      })
+    }
+    else{
+      this.http.get('https://event-r2eh.onrender.com/employee/eventlist/'+ id +'?action=inActive').subscribe(res => {
+        if (res) {
+          console.log(res);
+          this.toastr.success('inActive succesfully');
+        } else {
+          this.toastr.error('error');
+        }
+      }, error => {
+        this.threeDService.hide();
+        this.toastr.error('Technical Issue.')
+        console.log(error);
+      })
+    }
+
+    }
+    
+
+
 }

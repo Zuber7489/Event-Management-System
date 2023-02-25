@@ -16,7 +16,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './login and signup/login/login.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table'
@@ -30,11 +30,11 @@ import * as $ from 'jquery';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { FullLayoutComponent } from './admin/layouts/full-layout/full-layout.component';
-import { HomeComponent } from './home/home.component';
-import { ServicesComponent } from './services/services.component';
+import { HomeComponent } from './headnav/home/home.component';
+import { ServicesComponent } from './headnav/services/services.component';
 
 import { HeadnavComponent } from "./headnav/headnav.component";
-import { SignupComponent } from './signup/signup.component';
+import { SignupComponent } from './login and signup/signup/signup.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,

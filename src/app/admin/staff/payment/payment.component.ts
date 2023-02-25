@@ -43,7 +43,7 @@ export class PaymentComponent implements OnInit {
       description: 'Secured Payment',
       amount: amount * 100
     });
-    this.router.navigate(['admin/staff']);
+    this.router.navigate(['admin/event-available']);
   }
 
   invokeStripe() {

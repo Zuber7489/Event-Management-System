@@ -21,7 +21,7 @@ export class EventAvailableComponent implements OnInit {
   @ViewChild(MatSort)
   sort!: MatSort;
   @ViewChild(MatPaginator, { static: true }) paginator !: MatPaginator;
-  displayedColumns: string[] = ['sNo', 'eventtype',  'date', 'place', 'guest','foodtype','plan','payment','price' ,'action'];
+  displayedColumns: string[] = ['sNo', 'eventtype',  'date', 'place', 'guest','foodtype','plan','payment','price' ,'invoice','action'];
   userData: any = [];
   dataSource = new MatTableDataSource(this.userData);
   nameFilter = new FormControl('');
@@ -52,7 +52,7 @@ export class EventAvailableComponent implements OnInit {
     
    this.http.get('https://event-r2eh.onrender.com/employee/eventlist/userdata',this.httpOptions).subscribe(res=>{
 
-     this.userData = [res]
+     this.userData = res;
      console.log(this.userData)
    })
   }
