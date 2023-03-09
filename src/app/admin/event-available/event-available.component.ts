@@ -62,7 +62,10 @@ export class EventAvailableComponent implements OnInit {
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
     this.dataSource.filter = filterValue;
-    
+    this.http.get('https://event-r2eh.onrender.com/employee/eventlist/search/data?place='+this.dataSource.filter).subscribe(res=>{
+      console.log(res)
+      this.userData = res;
+  }) 
   }
 
   addStaff() {

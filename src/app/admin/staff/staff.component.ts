@@ -53,10 +53,16 @@ this.userData = res
   }
   
   applyFilter(event: Event) {
+    console.log(event,'kk')
     let filterValue = (event.target as HTMLInputElement).value;
-    filterValue = filterValue.trim(); // Remove whitespace
-    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
-    this.dataSource.filter = filterValue;
+    console.log(filterValue,'Searched Valued')
+    // filterValue = filterValue.trim(); // Remove whitespace
+    // filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
+    // this.dataSource.filter = filterValue;
+    this.http.get('https://event-r2eh.onrender.com/employee/eventlist/search/data?place='+filterValue).subscribe(res=>{
+console.log(res)
+this.userData = res
+   })
     
   }
 

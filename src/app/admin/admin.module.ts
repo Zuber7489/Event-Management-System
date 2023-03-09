@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 import { ADMIN_ROUTING } from './admin.routing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
-
 import { ContentLayoutComponent } from './layouts/content-layout/content-layout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
@@ -42,7 +41,8 @@ import { UserManagementComponent } from './user-management/user-management.compo
     MatIconModule,
     MatTableModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    
   ],
   declarations: [
     ContentLayoutComponent,
