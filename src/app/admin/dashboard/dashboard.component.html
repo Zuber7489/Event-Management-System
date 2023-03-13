@@ -23,29 +23,55 @@
     </title>
 
 </head>
+<div class=" pt-2 pb-2" style="align-items: baseline;">
+  <h1 class="page-title" class="main-title text-center"><span class="text-primary">Admin </span> Dashboard</h1>
+</div>
 <div class="row">
   <div class="col-lg-4">
 <div class="card text-white bg-primary mb-3 " style="max-width: 18rem;">
   <div class="card-header">All Bookings</div>
   <div class="card-body">
-    <h5 class="card-title">Primary card title</h5>
-    <p class="card-text">Total:50</p>
+    <h5 class="card-title">Total Bookings</h5>
+    <p class="card-text">Total: {{bookingCount}}</p>
   </div>
 </div></div> <div class="col-lg-4">
 <div class="card text-white bg-warning  mb-3" style="max-width: 18rem;">
   <div class="card-header">All Registered User</div>
   <div class="card-body">
-    <h5 class="card-title">Secondary card title</h5>
-    <p class="card-text">Total:50</p>
+    <h5 class="card-title">Total Users</h5>
+    <p class="card-text">Total: {{userCount}}</p>
   </div>
 </div></div><div class="col-lg-4">
 <div class="card text-white bg-success  mb-3" style="max-width: 18rem;">
   <div class="card-header">Success Booking</div>
   <div class="card-body">
-    <h5 class="card-title">Success card title</h5>
-    <p class="card-text">Total:5</p>
+    <h5 class="card-title">Successfully Booked</h5>
+    <p class="card-text">Total:10</p>
   </div>
 </div></div>
-
+<div class="col-lg-4">
+  <div class="card text-white   mb-3" style=" background-color: #f04788; max-width: 18rem;">
+    <div class="card-header">Basic Plan Users</div>
+    <div class="card-body">
+      <h5 class="card-title">Basic Plan</h5>
+      <p class="card-text">Total:{{this.c}}</p>
+    </div>
+  </div></div>
+  <div class="col-lg-4">
+    <div class="card text-white   mb-3" style="background-color: #d4a58d; max-width: 18rem;">
+      <div class="card-header">Pro Plan Users</div>
+      <div class="card-body">
+        <h5 class="card-title">Pro Plan</h5>
+        <p class="card-text">Total:{{this.Pro}}</p>
+      </div>
+    </div></div>
+    <div class="col-lg-4">
+      <div class="card text-white bg-info  mb-3" style="max-width: 18rem;">
+        <div class="card-header">Premium Plan Users</div>
+        <div class="card-body">
+          <h5 class="card-title">Premium Plan</h5>
+          <p class="card-text">Total:{{this.Premium}}</p>
+        </div>
+      </div></div>
 
 </div>
