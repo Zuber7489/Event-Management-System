@@ -23,7 +23,7 @@ export class PaymentComponent implements OnInit {
   }
   ngOnInit(): void {
     this.id = this.route.snapshot.queryParamMap.get('id');
-    this.invoice();
+   
     this.invokeStripe();
   }
 
@@ -34,8 +34,11 @@ export class PaymentComponent implements OnInit {
       token: function (stripeToken: any) {
         console.log({stripeToken})
         alert('Payment Done!');
+        
       }
+      
     });
+    
     
 
     paymentHandler.open({
@@ -43,7 +46,8 @@ export class PaymentComponent implements OnInit {
       description: 'Secured Payment',
       amount: amount * 100
     });
-    this.router.navigate(['admin/event-available']);
+    this.invoice()
+    // this.router.navigate(['admin/event-available']);
   }
 
   invokeStripe() {
@@ -62,7 +66,9 @@ export class PaymentComponent implements OnInit {
           }
         });
       }
+      
       window.document.body.appendChild(script);
+      
     }
   }
 
