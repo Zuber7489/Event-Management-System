@@ -1,33 +1,39 @@
-        <!-- <h2 class="ship_head text-center text-success">Payment Method</h2>
-        <div class="card_info">
-          <div class="card_head">
-            <h2 class="card_title">Personal details</h2>
-          </div>
-          <div class="card_types">
-            <img class="card_img" src="https://cdn-icons-png.flaticon.com/512/349/349221.png" alt="" />
-            <img class="card_img" src="https://cdn-icons-png.flaticon.com/512/349/349230.png" alt="" />
-            <img class="card_img" src="https://cdn-icons-png.flaticon.com/512/349/349228.png" alt="" />
-            <img class="card_img" src="https://img.icons8.com/fluency/512/mastercard.png" alt="" />
-          </div>
-          <form [formGroup]="paymentForm" >
-            <input type="text" name="Name" value="" formControlName="name" placeholder="Your Name" maxlength="60" />
-            <span class="validation_msg" *ngIf="f.name.errors && f.name.errors.required && isError">Please Enter Name.</span>
-            <input type="text" name="Number" value="" formControlName="number" placeholder="Ph. Number" maxlength="16" />
-            <span class="validation_msg" *ngIf="f.number.errors && f.number.errors.required && isError">Please Enter Number.</span>
-            <div>
-              <input type="text" name="Name" value="" formControlName="expire" placeholder="Expire" maxlength="4" />
-              <span class="validation_msg" *ngIf="f.expire.errors && f.expire.errors.required && isError">Please Enter Expiry Date.</span>
-              <input type="text" name="Name" value="" formControlName="cvc" placeholder="CVC" maxlength="3" />
-              <span class="validation_msg" *ngIf="f.cvc.errors && f.cvc.errors.required && isError">Please Enter Card Cvc.</span>
-            </div>
-            <button type="submit" class="confirm_btn" (click)="Data()">Pay</button>
-          </form>
-          
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">  
+  
+  <title>Credit Card - Input Form</title>
+</head>
+<body>
+  <div class="container">
+    <div class="form">
+      <form action="#">
+        <div class="flex-row">
+          <label for="card-number">Your Name</label>
+          <input name="card-number" disabled class="card-number" type="text" value="{{this.data.userDetails.name}}">
         </div>
-        -->
-
-
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+        <div class="flex-row">
+          <label for="card-name">Your Gmail</label>
+          <input name="card-name" disabled class="card-name" type="text" value="{{this.data.userDetails.email}}">
+        </div>
+        <div class="flex-row">
+          <label for="card-name">Your Mobile No.</label>
+          <input name="card-name" disabled class="card-name" type="text" value="{{this.data.userDetails.number}}">
+        </div>
+        <div class="flex-row">
+          <button (click)="initializePayment()">Pay Now</button>
+        </div>
+      </form>
+      <img class="card-image" src="https://pngimg.com/uploads/credit_card/credit_card_PNG99.png" alt="Card image">
+      <div class="card-image-shadow"></div>
+    </div>
+  </div>
+</body>
+        <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 <div class="container">
@@ -64,10 +70,10 @@
                   <a tabindex="0" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="Enter the ZIP/Postal code for your credit card billing address."></a>
               </div>
           </div><br>
-          <button id="PayButton" (click)="initializePayment(20000)" class="btn btn-block btn-success submit-button" type="submit">
+          <button id="PayButton" (click)="initializePayment()" class="btn btn-block btn-success submit-button" type="submit">
               <span class="submit-button-lock"></span>
               <span class="align-middle">Pay {{zuberdata.price}}</span>
           </button>
       </form>
   </div>
-</div>
+</div> -->
