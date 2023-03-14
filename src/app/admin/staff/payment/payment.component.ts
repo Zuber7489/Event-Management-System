@@ -27,7 +27,7 @@ export class PaymentComponent implements OnInit {
     this.invokeStripe();
   }
 
-  initializePayment(amount: number) {
+  initializePayment() {
     const paymentHandler = (<any>window).StripeCheckout.configure({
       key: 'pk_test_sLUqHXtqXOkwSdPosC8ZikQ800snMatYMb',
       locale: 'auto',
@@ -41,9 +41,9 @@ export class PaymentComponent implements OnInit {
     paymentHandler.open({
       name: 'Event Booking',
       description: 'Secured Payment',
-      amount: amount * 100
+      
     });
-    this.router.navigate(['admin/event-available']);
+    this.router.navigate(['admin/plan']);
   }
 
   invokeStripe() {

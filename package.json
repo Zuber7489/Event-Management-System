@@ -22,6 +22,7 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "@google-pay/button-angular": "^3.0.6",
     "@ng-bootstrap/ng-bootstrap": "^10.0.0",
     "@popperjs/core": "^2.10.1",
     "@tinymce/tinymce-angular": "^4.2.4",
