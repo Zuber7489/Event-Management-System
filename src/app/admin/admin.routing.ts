@@ -2,6 +2,7 @@ import { Routes } from "@angular/router";
 // import { AuthGuard } from "../service/auth.guard";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { EventAvailableComponent } from "./event-available/event-available.component";
+import { EventAvlComponent } from "./event-avl/event-avl.component";
 import { PlanComponent } from "./plan/plan.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { PaymentComponent } from "./staff/payment/payment.component";
@@ -18,4 +19,5 @@ export const ADMIN_ROUTING: Routes=[
     {path:'user-management',component:UserManagementComponent},
     {path:'staff',loadChildren: () => import('./staff/staff.module').then(m => m.StaffModule)},
     {path:'plan',component:PlanComponent},
+    {path:'event-avl',component:EventAvlComponent}
 ]

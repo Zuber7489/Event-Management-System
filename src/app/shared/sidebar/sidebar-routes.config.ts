@@ -8,6 +8,7 @@ export const ROUTES: RouteInfo[] = [
 
     { path: 'staff/add-staff', title: 'Event Book', icon: 'bx bx-file', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },
     { path: 'plan', title: 'Plan Prices', icon: 'bx bx-message-square-edit', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },           
+    { path: 'event-avl', title: 'Event-Available', icon: 'bx bx-message-square-edit', class: '', badge: '', badgeClass: '', isExternalLink: false, submenu: [] },           
 
 ];
 

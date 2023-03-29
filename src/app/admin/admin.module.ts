@@ -24,6 +24,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { PlanComponent } from './plan/plan.component';
 import { EventAvailableComponent } from './event-available/event-available.component';
 import { UserManagementComponent } from './user-management/user-management.component';
+import { EventAvlComponent } from './event-avl/event-avl.component';
 
 
 
@@ -56,6 +57,7 @@ import { UserManagementComponent } from './user-management/user-management.compo
    PlanComponent,
    EventAvailableComponent,
    UserManagementComponent,
+   EventAvlComponent,
    
 
   ],
